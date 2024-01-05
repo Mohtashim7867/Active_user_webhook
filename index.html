@@ -1,0 +1,36 @@
+<!-- index.html -->
+
+
+<!-- ommand php websocket_server.php -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Example</title>
+</head>
+<body>
+    <h1>WebSocket Example</h1>
+    <p id="usersCount">Current number of users: 0</p>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.onopen = event => {
+            console.log('WebSocket connection opened:', event);
+        };
+
+        socket.onmessage = event => {
+            const data = JSON.parse(event.data);
+            const usersCount = data.usersCount;
+            document.getElementById('usersCount').innerText = `Current number of users: ${usersCount}`;
+        };
+
+        socket.onclose = event => {
+            console.log('WebSocket connection closed:', event);
+        };
+    </script>
+</body>
+</html>

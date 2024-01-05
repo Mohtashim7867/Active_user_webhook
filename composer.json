@@ -1,0 +1,17 @@
+{
+    "name": "pc/websocket_php_example",
+    "autoload": {
+        "psr-4": {
+            "Pc\\WebsocketPhpExample\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hasnat-diligenttek",
+            "email": "147215364+Hasnat-diligenttek@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "cboden/ratchet": "^0.4"
+    }
+}
